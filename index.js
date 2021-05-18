@@ -12,8 +12,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
+// DB setup
+const initDB = require('./db')
+initDB();
+
 // Routes setup
 const routes = require('./routes/v1.routes');
-app.use('/api/v1/routes');
+app.use('/api/v1/routes',routes);
 
 app.listen(PORT, ()=> console.log(`Server started on port ${PORT}`))
