@@ -18,6 +18,6 @@ initDB();
 
 // Routes setup
 const routes = require('./routes/v1.routes');
-app.use('/api/v1/routes',routes);
+app.use('/api/v1',routes);
 
 app.listen(PORT, ()=> console.log(`Server started on port ${PORT}`))
