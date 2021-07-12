@@ -35,8 +35,6 @@ const addVideoToCustomPlaylist = async (req, res) => {
     const { videoID } = req.body;
     const { playlistID } = req.params;
 
-    console.log(playlistID);
-
     const video = await Playlist.findOne({ user: userID });
     const myPlaylist = video.customlists.find((item) => String(item._id) === playlistID);
     const isAddedToPlaylist = myPlaylist.videos.includes(videoID);
